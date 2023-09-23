@@ -17,10 +17,16 @@ function adicionarPostagem(event) {
     }
 }
 
+
+
+
 // Função para exibir as postagens na lista
 function exibirPostagens() {
     const postList = document.getElementById('post-list');
     postList.innerHTML = '';
+
+    // Ordene as postagens pelo campo 'data' antes de exibi-las
+    postagens.sort((a, b) => new Date(a.data) - new Date(b.data));
 
     postagens.forEach((postagem, index) => {
         const li = document.createElement('li');
